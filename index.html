@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>World Happiness Report 2025 - Colombia</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body{
+            margin:0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+            color:white;
+        }
+
+        header{
+            text-align:center;
+            padding:40px 20px;
+        }
+
+        h1{
+            margin-bottom:10px;
+        }
+
+        p{
+            max-width:800px;
+            margin:auto;
+            opacity:0.9;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+            padding:20px;
+        }
+
+        .card{
+            background:rgba(255,255,255,0.08);
+            padding:25px;
+            border-radius:15px;
+            backdrop-filter: blur(10px);
+            box-shadow:0 0 20px rgba(0,0,0,0.4);
+            margin-bottom:30px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>World Happiness Report 2025</h1>
+    <p>
+        El índice de felicidad mide la percepción subjetiva del bienestar
+        de los ciudadanos en una escala de 0 a 10, evaluando factores
+        como PIB per cápita, apoyo social, esperanza de vida,
+        libertad individual y percepción de corrupción.
+    </p>
+</header>
+
+<div class="container">
+<div class="card fade-in">
+    <h2>¿Qué es el World Happiness Report?</h2>
+    <p>
+        El World Happiness Report es un informe anual que clasifica a los países
+        según la percepción de bienestar de sus ciudadanos. La medición se basa
+        en la encuesta de la “Escalera de Cantril”, donde las personas evalúan
+        su vida en una escala de 0 (peor vida posible) a 10 (mejor vida posible).
+    </p>
+    <p>
+        La puntuación final se explica a partir de seis variables principales:
+        PIB per cápita, apoyo social, esperanza de vida saludable,
+        libertad para tomar decisiones, generosidad y percepción de corrupción.
+    </p>
+</div>
+</div>
+
+<div class="card fade-in">
+    <h2>Evolución de la Felicidad en Colombia (2011–2024)</h2>
+    <img src="img/colombia_evolucion.png" 
+         alt="Evolución felicidad Colombia"
+         style="width:100%; border-radius:10px;">
+    <p>
+        La gráfica muestra una tendencia creciente hasta 2015,
+        seguida de una disminución progresiva entre 2016 y 2022,
+        con una recuperación reciente en 2023–2024.
+        El periodo sombreado refleja el impacto de la pandemia,
+        donde se observa una caída significativa en la evaluación de vida.
+    </p>
+</div>
+
+<div class="card fade-in">
+    <h2>Comparación de Componentes de Felicidad (2024)</h2>
+    <img src="img/componentes_2024.png" 
+         alt="Componentes felicidad comparados"
+         style="width:100%; border-radius:10px;">
+    <p>
+        Se comparan los componentes que explican la puntuación de Colombia,
+        Costa Rica y Venezuela. Se observa que Costa Rica presenta mayores
+        contribuciones en apoyo social y estabilidad económica,
+        mientras que Venezuela muestra un peso elevado del componente
+        “Dystopia + residual”, lo que indica condiciones estructurales
+        adversas que reducen la percepción de bienestar.
+    </p>
+</div>
+
+<div class="card fade-in">
+    <h2>Análisis Comparativo</h2>
+    <p>
+        Costa Rica se posiciona por encima de Colombia debido a
+        mayores niveles de estabilidad institucional y confianza social.
+        Colombia, aunque mantiene un apoyo social fuerte,
+        presenta desafíos en percepción de corrupción y desigualdad económica.
+        Venezuela, por su parte, refleja un menor desempeño general
+        asociado a inestabilidad política y dificultades económicas.
+    </p>
+</div>
+
+<div class="card fade-in">
+
+<h2>Comparación Internacional</h2>
+
+<div class="comparison-wrapper">
+
+    <!-- SECCIÓN IZQUIERDA (PAÍSES) -->
+    <div class="countries-section">
+
+        <!-- COLOMBIA -->
+        <div class="country">
+
+            <div class="country-left">
+                <img src="img/colombia.png" class="flag">
+                <div>
+                    <h3>Colombia</h3>
+                    <p><strong>Puntaje 2024:</strong> 6.0</p>
+                </div>
+            </div>
+
+            <div class="mini-chart" id="chart-colombia"></div>
+
+        </div>
+
+        <!-- COSTA RICA -->
+        <div class="country">
+
+            <div class="country-left">
+                <img src="img/costarica.png" class="flag">
+                <div>
+                    <h3>Costa Rica</h3>
+                    <p><strong>Puntaje 2024:</strong> 7.27</p>
+                </div>
+            </div>
+
+            <div class="mini-chart" id="chart-costarica"></div>
+
+        </div>
+
+        <!-- VENEZUELA -->
+        <div class="country">
+
+            <div class="country-left">
+                <img src="img/venezuela.png" class="flag">
+                <div>
+                    <h3>Venezuela</h3>
+                    <p><strong>Puntaje 2024:</strong> 5.68</p>
+                </div>
+            </div>
+
+            <div class="mini-chart" id="chart-venezuela"></div>
+
+        </div>
+
+    </div>
+
+    <!-- PANEL DERECHO DINÁMICO -->
+    <div class="info-panel" id="info-panel">
+        <h3>Selecciona una barra</h3>
+        <p>Haz clic en cualquier barra para ver información detallada del año correspondiente.</p>
+    </div>
+
+</div>
+
+</div>
+<script>
+
+const maxScale = 8;
+
+const data = {
+    colombia: [
+        {year: 2012, value: 6.42},
+        {year: 2014, value: 6.48},
+        {year: 2016, value: 6.36},
+        {year: 2018, value: 6.12},
+        {year: 2020, value: 6.01},
+        {year: 2022, value: 5.63},
+        {year: 2024, value: 6.0}
+    ],
+    costarica: [
+        {year: 2012, value: 7.26},
+        {year: 2014, value: 7.23},
+        {year: 2016, value: 7.08},
+        {year: 2018, value: 7.17},
+        {year: 2020, value: 7.07},
+        {year: 2022, value: 6.61},
+        {year: 2024, value: 7.27}
+    ],
+    venezuela: [
+        {year: 2012, value: 7.04},
+        {year: 2014, value: 6.81},
+        {year: 2016, value: 5.25},
+        {year: 2018, value: 4.71},
+        {year: 2020, value: 4.89},
+        {year: 2022, value: 5.21},
+        {year: 2024, value: 5.68}
+    ]
+};
+
+function createChart(country, containerId) {
+    const container = document.getElementById(containerId);
+
+    data[country].forEach(item => {
+        const bar = document.createElement("div");
+        bar.classList.add("bar");
+
+        const heightPercent = (item.value / maxScale) * 100;
+
+        bar.style.height = "0%";
+        bar.setAttribute("data-year", item.year);
+        bar.setAttribute("data-value", item.value);
+
+        container.appendChild(bar);
+
+        setTimeout(() => {
+            bar.style.height = heightPercent + "%";
+        }, 100);
+    });
+}
+
+createChart("colombia", "chart-colombia");
+createChart("costarica", "chart-costarica");
+createChart("venezuela", "chart-venezuela");
+
+</script>
+
+</body>
+</html>

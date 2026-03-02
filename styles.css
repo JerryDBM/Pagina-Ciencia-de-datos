@@ -1,0 +1,99 @@
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== ESTRUCTURA PAÍS ===== */
+
+.country {
+    display: flex;
+    justify-content: flex-start; /* antes space-between */
+    align-items: center;
+    gap: 80px; /* más separación */
+    margin-bottom: 70px;
+}
+
+.country-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    min-width: 420px;
+}
+
+.flag {
+    width: 400px;
+    border-radius: 10px;
+}
+
+/* ===== GRÁFICO ===== */
+
+.mini-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    height: 180px;
+    flex: 2; 
+}
+
+/* ===== BARRAS ===== */
+
+.bar {
+    width: 28px;
+    background: linear-gradient(to top, #00c6ff, #0072ff);
+    border-radius: 6px 6px 0 0;
+    transition: height 1s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.bar:hover {
+    transform: scaleY(1.08);
+}
+
+/* Tooltip */
+
+.bar::after {
+    content: attr(data-year) " - " attr(data-value);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.bar:hover::after {
+    opacity: 1;
+}
+
+.comparison-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.countries-section {
+    flex: 2;
+}
+
+.info-panel {
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    min-height: 250px;
+    transition: 0.3s ease;
+}
