@@ -1,7 +1,14 @@
-.fade-in {
+/* ===== ANIMACIÓN SCROLL ===== */
+
+.fade-in{
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @keyframes fadeInUp {
@@ -11,13 +18,32 @@
     }
 }
 
-/* ===== ESTRUCTURA PAÍS ===== */
+.main-graph{
+    width: 70%;
+    max-width: 700px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: 0.3s ease;
+}
+
+.main-graph-large{
+    width: 85%;
+    max-width: 900px;
+}
+
+.main-graph:hover{
+    transform: scale(1.02);
+}
+
+
 
 .country {
     display: flex;
-    justify-content: flex-start; /* antes space-between */
+    justify-content: flex-start; 
     align-items: center;
-    gap: 80px; /* más separación */
+    gap: 80px; 
     margin-bottom: 70px;
 }
 
@@ -43,39 +69,46 @@
     flex: 2; 
 }
 
-/* ===== BARRAS ===== */
+
 
 .bar {
-    width: 28px;
-    background: linear-gradient(to top, #00c6ff, #0072ff);
-    border-radius: 6px 6px 0 0;
-    transition: height 1s ease, transform 0.3s ease;
+    width: 30px;
+    background: linear-gradient(180deg, #00e0ff, #0072ff);
+    border-radius: 8px 8px 0 0;
+    transition: height 1s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    cursor: pointer;
 }
 
 .bar:hover {
-    transform: scaleY(1.08);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
 }
 
 /* Tooltip */
 
 .bar::after {
-    content: attr(data-year) " - " attr(data-value);
+    content: attr(data-year) "  |  " attr(data-value);
     position: absolute;
-    bottom: 110%;
+    bottom: 120%;
     left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.85);
-    padding: 5px 8px;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(255,255,255,0.95);
+    color: #111;
+    padding: 6px 12px;
     font-size: 12px;
-    border-radius: 6px;
+    font-weight: 600;
+    border-radius: 10px;
     opacity: 0;
-    transition: 0.3s;
+    pointer-events: none;
+    transition: all 0.25s ease;
     white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .bar:hover::after {
     opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .comparison-wrapper {
@@ -91,9 +124,56 @@
 .info-panel {
     flex: 1;
     background: rgba(255,255,255,0.08);
-    padding: 25px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    min-height: 250px;
-    transition: 0.3s ease;
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    min-height: 280px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.info-panel:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.active-bar {
+    outline: 3px solid white;
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.info-panel {
+    text-align: center;
+}
+
+
+body {
+    transition: background 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: -1;
+}
+
+
+body.colombia-bg {
+    background-image: url("https://images.unsplash.com/photo-1532443603613-61fa154742cd?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+
+body.costarica-bg {
+    background-image: url("https://images.unsplash.com/photo-1611602316663-92dc58e199ed?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+
+body.venezuela-bg {
+    background-image: url("https://plus.unsplash.com/premium_photo-1733317242907-7428987b8bde?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
