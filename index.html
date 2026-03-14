@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>World Happiness Report 2025 - Colombia</title>
+    <title>¿Qué tan felices somos los colombianos... y por qué importa saberlo?</title>
     <link rel="stylesheet" href="styles.css">
 
     <style>
@@ -113,35 +113,46 @@
 <body>
 
 <header>
-    <h1>World Happiness Report 2025</h1>
+<h1 class="titulo-bandera">
+¿Qué tan felices somos los colombianos... y por qué importa saberlo?
+</h1>
     <p>
-        El índice de felicidad mide la percepción subjetiva del bienestar
-        de los ciudadanos en una escala de 0 a 10, evaluando factores
-        como PIB per cápita, apoyo social, esperanza de vida,
-        libertad individual y percepción de corrupción.
+        La felicidad no es solo una sensación, también se puede estudiar. El World Happiness Report reúne datos de distintos países para entender qué factores influyen realmente en el bienestar de las personas.
+
     </p>
 </header>
 
 <div class="container">
-<div class="card fade-in">
-    <h2>¿Qué es el World Happiness Report?</h2>
-    <p>
-        El World Happiness Report es un informe anual que clasifica a los países
-        según la percepción de bienestar de sus ciudadanos. La medición se basa
-        en la encuesta de la “Escalera de Cantril”, donde las personas evalúan
-        su vida en una escala de 0 (peor vida posible) a 10 (mejor vida posible).
-    </p>
-    <p>
-        La puntuación final se explica a partir de seis variables principales:
-        PIB per cápita, apoyo social, esperanza de vida saludable,
-        libertad para tomar decisiones, generosidad y percepción de corrupción.
-    </p>
+<div class="card fade-in info-happiness">
+
+<div class="texto-happiness">
+<h2>¿Qué es el World Happiness Report?</h2>
+
+<p>
+El World Happiness Report es un informe anual que clasifica a los países
+según la percepción de bienestar de sus ciudadanos. La medición se basa
+en la encuesta de la “Escalera de Cantril”, donde las personas evalúan
+su vida en una escala de 0 (peor vida posible) a 10 (mejor vida posible).
+</p>
+
+<p>
+La puntuación final se explica a partir de seis variables principales:
+PIB per cápita, apoyo social, esperanza de vida saludable,
+libertad para tomar decisiones, generosidad y percepción de corrupción.
+</p>
+
+</div>
+
+<div class="imagen-happiness">
+<img src="Imagenes\WER.png" alt="World Happiness Report">
+</div>
+
 </div>
 </div>
 
-<div class="card fade-in">
-    <h2>Evolución de la Felicidad en Colombia (2011–2024)</h2>
-    <img src="img/colombia_evolucion.png" 
+<div class="card fade-in evolucion-colombia">
+    <h2>¿Por qué Colombia fue más feliz hace una década que hoy? (2011–2024)</h2>
+    <img src="Imagenes\colombia_evolucion.png" 
      alt="Evolución felicidad Colombia"
      class="main-graph">
     <p>
@@ -158,7 +169,7 @@
   <!-- AUMENTO -->
   <div class="analysis-block">
     <div class="analysis-text">
-      <h2>📈 Aumento (2011–2015)</h2>
+      <h2>¿Qué nos hizo tan optimistas entre 2011 y 2015?</h2>
       <p>
         Entre 2011 y 2015 se observa un crecimiento sostenido en la evaluación de vida,
         alcanzando su punto más alto alrededor de 2014–2015.
@@ -170,14 +181,14 @@
       </p>
     </div>
     <div class="analysis-image">
-      <img src="img/James.png" alt="Crecimiento 2011-2015">
+      <img src="Imagenes\James.png" alt="Crecimiento 2011-2015">
     </div>
   </div>
 
   <!-- DESCENSO -->
   <div class="analysis-block reverse">
     <div class="analysis-text">
-      <h2>📉 Descenso (2016–2019)</h2>
+      <h2>¿Qué nos robó la alegría entre 2016 y 2019?</h2>
       <p>
         Desde 2016 comienza una disminución progresiva asociada a polarización política
         tras el plebiscito del acuerdo de paz.
@@ -188,14 +199,14 @@
       </p>
     </div>
     <div class="analysis-image">
-      <img src="img/Santos .png" alt="Descenso 2016-2019">
+      <img src="Imagenes\Santos .png" alt="Descenso 2016-2019">
     </div>
   </div>
 
   <!-- CAÍDA FUERTE -->
   <div class="analysis-block">
     <div class="analysis-text">
-      <h2>⬇️ Caída fuerte (2020–2022)</h2>
+      <h2>¿Cuánto nos golpeó la pandemia… y cómo lo sabemos?</h2>
       <p>
         La pandemia impactó fuertemente el empleo, la economía y la salud mental,
         llevando el indicador a su punto más bajo.
@@ -207,14 +218,14 @@
       </p>
     </div>
     <div class="analysis-image">
-      <img src="img/pandemia.png" alt="Impacto pandemia">
+      <img src="Imagenes\pandemia.png" alt="Impacto pandemia">
     </div>
   </div>
 
   <!-- RECUPERACIÓN -->
   <div class="analysis-block reverse">
     <div class="analysis-text">
-      <h2>📊 Recuperación (2023–2024)</h2>
+      <h2>¿Estamos recuperando la esperanza o solo respirando?</h2>
       <p>
         La reactivación económica posterior a la pandemia impulsó una mejora moderada
         en la evaluación de vida.
@@ -225,60 +236,73 @@
       </p>
     </div>
     <div class="analysis-image">
-      <img src="img/crecimiento.png" alt="Recuperación 2023-2024">
+      <img src="Imagenes\crecimiento.png" alt="Recuperación 2023-2024">
     </div>
   </div>
 
 </div>
 
-<div class="card fade-in">
-    <h2>Comparación de Componentes de Felicidad (2024)</h2>
+<div class="comparacion-felicidad fade-in">
 
-    <img src="img/componentes_2024.png" 
-     alt="Componentes felicidad comparados"
-     class="main-graph main-graph-large">
+<div class="grafico-felicidad">
+    
+    <h2 class="titulo-grafico">Tres países, tres niveles de felicidad</h2>
+    
+    <img src="Imagenes/componentes_2024.png" 
+    alt="Componentes felicidad comparados"
+    class="main-graph">
 
-    <p>
-        El modelo del World Happiness Report descompone la puntuación total
-        en seis variables estructurales que explican la percepción de bienestar:
-        PIB per cápita, apoyo social, esperanza de vida saludable,
-        libertad para tomar decisiones, generosidad y percepción de corrupción.
+</div>
+<!-- COSTA RICA -->
+<div class="comparacion-bloque">
 
-    </p>
+<div class="comparacion-texto">
+<h3>Costa Rica</h3>
+<p>
+Costa Rica destaca por su alto nivel de apoyo social, estabilidad institucional y fuerte sentido de comunidad. Factores como la percepción de libertad, la confianza en las instituciones y una cultura centrada en el bienestar colectivo influyen significativamente en su alta evaluación de vida. Aunque no es la economía más grande de la región, su modelo social y su cohesión comunitaria elevan su puntaje de felicidad.
+</p>
+</div>
 
-    <p>
-        En 2024, Costa Rica presenta una contribución elevada del apoyo social
-        y de la estabilidad institucional, lo que refleja una red de confianza
-        interpersonal sólida y continuidad democrática. Estos factores suelen
-        estar estrechamente vinculados con mayores niveles de satisfacción vital
-        en contextos latinoamericanos.
+<div class="comparacion-imagen">
+<img src="Imagenes\WhatsApp Image 2026-03-13 at 6.55.23 PM.jpeg">
+</div>
 
-    </p>
+</div>
 
-    <p>
-        Colombia mantiene un desempeño intermedio. Su fortaleza principal
-        se encuentra en el apoyo social, pero enfrenta desafíos en percepción
-        de corrupción y desigualdad económica, lo que limita que el puntaje
-        total alcance niveles similares a los de Costa Rica.
 
-    </p>
+<!-- COLOMBIA -->
+<div class="comparacion-bloque reverse">
 
-    <p>
-        Venezuela muestra un peso considerable del componente denominado
-        “Dystopia + residual”. Este factor funciona como referencia teórica
-        que representa las condiciones mínimas de bienestar esperadas.
-        Un valor alto en esta categoría suele indicar debilidades estructurales
-        en variables económicas e institucionales.
+<div class="comparacion-texto">
+<h3>Colombia</h3>
+<p>
+Colombia, por su parte, mantiene un nivel de felicidad superior al de Venezuela, pero inferior al de Costa Rica. Su posición refleja una combinación de resiliencia social y optimismo cultural, junto con desafíos persistentes como desigualdad, percepción de corrupción e incertidumbre política. Aunque en 2024 se observa una ligera recuperación tras los efectos de la pandemia, el país aún enfrenta obstáculos estructurales que limitan un crecimiento más significativo en su puntaje.
+</p>
+</div>
 
-    </p>
+<div class="comparacion-imagen">
+<img src="Imagenes\col.jpeg">
+</div>
 
-    <p>
-        La comparación evidencia que las diferencias entre países no dependen
-        exclusivamente del ingreso económico, sino de la combinación entre
-        estabilidad institucional, cohesión social y confianza en las
-        instituciones públicas.
+</div>
 
-    </p>
+
+<!-- VENEZUELA -->
+<div class="comparacion-bloque">
+
+<div class="comparacion-texto">
+<h3>Venezuela</h3>
+<p>
+En contraste, Venezuela enfrenta una situación prolongada de crisis económica, alta inflación y deterioro de servicios básicos, lo que impacta directamente en la calidad de vida de su población. A esto se suma una baja percepción de libertad y confianza institucional, factores que influyen negativamente en la evaluación general de vida y explican su posición como el país menos feliz de la región.
+</p>
+</div>
+
+<div class="comparacion-imagen">
+<img src="Imagenes\WhatsApp Image 2026-03-13 at 6.55.50 PM.jpeg">
+</div>
+
+</div>
+
 </div>
 
 <div class="card fade-in">
@@ -294,7 +318,7 @@
         <div class="country">
 
             <div class="country-left">
-                <img src="img/colombia.png" class="flag">
+                <img src="Imagenes\colombia.png" class="flag">
                 <div>
                     <h3>Colombia</h3>
                     <p><strong>Puntaje 2024:</strong> 6.0</p>
@@ -309,7 +333,7 @@
         <div class="country">
 
             <div class="country-left">
-                <img src="img/costarica.png" class="flag">
+                <img src="Imagenes\costarica.png" class="flag">
                 <div>
                     <h3>Costa Rica</h3>
                     <p><strong>Puntaje 2024:</strong> 7.27</p>
@@ -324,7 +348,7 @@
         <div class="country">
 
             <div class="country-left">
-                <img src="img/venezuela.png" class="flag">
+                <img src="Imagenes\Venezuela.png" class="flag">
                 <div>
                     <h3>Venezuela</h3>
                     <p><strong>Puntaje 2024:</strong> 5.68</p>
@@ -572,6 +596,42 @@ faders.forEach(fader => {
 
 
 </script>
+<footer class="footer-autores">
 
+<h2>Autores del Proyecto</h2>
+
+<div class="autores-container">
+
+<div class="autor">
+<h3>Luis Mario Pérez Díaz</h3>
+<p><strong>Correo:</strong>lpdiaz@utb.edu.co</p>
+</div>
+
+<div class="autor">
+<h3>Joshua David Reyes Leones</h3>
+<p><strong>Correo:</strong> joshreyes@utb.edu.co</p>
+</div>
+
+<div class="autor">
+<h3>Mauricio Andres Fernandez Espinosa</h3>
+<p><strong>Correo:</strong> maufernandez@utb.edu.co</p>
+</div>
+
+<div class="autor">
+<h3>Jerry Daniel Buelvas Mejía</h3>
+<p><strong>Correo:</strong> jebuelvas@utb.edu.co</p>
+</div>
+<div class="autor">
+<h3>Maria Del Mar Restrepo Licona</h3>
+<p><strong>Correo:</strong> liconam@utb.edu.co</p>
+</div>
+<div class="autor">
+<h3>Santiago Andres Cardona Rendon</h3>
+<p><strong>Correo:</strong>Cardonas@utb.edu.co</p>
+</div>
+</div>
+
+
+</footer>
 </body>
 </html>
